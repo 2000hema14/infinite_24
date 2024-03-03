@@ -1,0 +1,7 @@
+C:\hema\infinite\B3\csharp\assignment3_dontnet\assignment3_dotnet\assignment3_dotnet\bin\Debug\assignment3_dotnet.exe.config
+C:\hema\infinite\B3\csharp\assignment3_dontnet\assignment3_dotnet\assignment3_dotnet\bin\Debug\assignment3_dotnet.exe
+C:\hema\infinite\B3\csharp\assignment3_dontnet\assignment3_dotnet\assignment3_dotnet\bin\Debug\assignment3_dotnet.pdb
+C:\hema\infinite\B3\csharp\assignment3_dontnet\assignment3_dotnet\assignment3_dotnet\obj\Debug\assignment3_dotnet.csproj.AssemblyReference.cache
+C:\hema\infinite\B3\csharp\assignment3_dontnet\assignment3_dotnet\assignment3_dotnet\obj\Debug\assignment3_dotnet.csproj.CoreCompileInputs.cache
+C:\hema\infinite\B3\csharp\assignment3_dontnet\assignment3_dotnet\assignment3_dotnet\obj\Debug\assignment3_dotnet.exe
+C:\hema\infinite\B3\csharp\assignment3_dontnet\assignment3_dotnet\assignment3_dotnet\obj\Debug\assignment3_dotnet.pdb
