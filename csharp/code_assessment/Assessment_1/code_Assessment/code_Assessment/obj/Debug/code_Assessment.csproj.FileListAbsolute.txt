@@ -1,0 +1,7 @@
+C:\hema\infinite\B3\csharp\code_assessment\Assessment_1\code_Assessment\code_Assessment\obj\Debug\code_Assessment.csproj.AssemblyReference.cache
+C:\hema\infinite\B3\csharp\code_assessment\Assessment_1\code_Assessment\code_Assessment\obj\Debug\code_Assessment.csproj.CoreCompileInputs.cache
+C:\hema\infinite\B3\csharp\code_assessment\Assessment_1\code_Assessment\code_Assessment\bin\Debug\code_Assessment.exe.config
+C:\hema\infinite\B3\csharp\code_assessment\Assessment_1\code_Assessment\code_Assessment\bin\Debug\code_Assessment.exe
+C:\hema\infinite\B3\csharp\code_assessment\Assessment_1\code_Assessment\code_Assessment\bin\Debug\code_Assessment.pdb
+C:\hema\infinite\B3\csharp\code_assessment\Assessment_1\code_Assessment\code_Assessment\obj\Debug\code_Assessment.exe
+C:\hema\infinite\B3\csharp\code_assessment\Assessment_1\code_Assessment\code_Assessment\obj\Debug\code_Assessment.pdb

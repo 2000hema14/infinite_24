@@ -1,7 +1,0 @@
-C:\hema\infinite\B3\csharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.csproj.AssemblyReference.cache
-C:\hema\infinite\B3\csharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.csproj.CoreCompileInputs.cache
-C:\hema\infinite\B3\csharp\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.exe.config
-C:\hema\infinite\B3\csharp\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.exe
-C:\hema\infinite\B3\csharp\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.pdb
-C:\hema\infinite\B3\csharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.exe
-C:\hema\infinite\B3\csharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.pdb
