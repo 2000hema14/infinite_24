@@ -10,14 +10,14 @@ namespace Assignment_3
 
     class Doctor
     {
-        private int RegNo;
+        private int RegnNo;
         private string Name;
         private double FeesCharged;
 
 
         public void SetValues(int regnNo, string name, double feesCharged)
         {
-            RegNo = regnNo;
+            RegnNo = regnNo;
             Name = name;
             FeesCharged = feesCharged;
         }
@@ -25,20 +25,20 @@ namespace Assignment_3
 
         public void DisplayValues()
         {
-            Console.WriteLine($"Registration Number: {RegNo}");
+            Console.WriteLine($"Registration Number: {RegnNo}");
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Fees Charged: {FeesCharged}");
         }
     }
 
-    class Question5
+    class Qa5
     {
         static void Main(string[] args)
         {
             Doctor doctor = new Doctor();
 
 
-            doctor.SetValues(1034321, "Dr.hemalatha",200.00);
+            doctor.SetValues(109876, "Dr.Hemalatha", 250.50);
 
 
             doctor.DisplayValues();
