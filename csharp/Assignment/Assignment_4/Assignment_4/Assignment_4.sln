@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_4", "Assignment_4\Assignment_4.csproj", "{4E036D92-31DE-48C1-B226-E7C84A5BA8DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketConcession", "TicketConcession\TicketConcession.csproj", "{5454A9E2-2418-4D35-84B9-61A5981FA1ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E036D92-31DE-48C1-B226-E7C84A5BA8DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E036D92-31DE-48C1-B226-E7C84A5BA8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E036D92-31DE-48C1-B226-E7C84A5BA8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E036D92-31DE-48C1-B226-E7C84A5BA8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5454A9E2-2418-4D35-84B9-61A5981FA1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5454A9E2-2418-4D35-84B9-61A5981FA1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5454A9E2-2418-4D35-84B9-61A5981FA1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5454A9E2-2418-4D35-84B9-61A5981FA1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50DA1654-96F8-40E9-85EF-DEAB1C117BD8}
+	EndGlobalSection
+EndGlobal

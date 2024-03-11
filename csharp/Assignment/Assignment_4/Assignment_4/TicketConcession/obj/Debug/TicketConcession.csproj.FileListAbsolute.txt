@@ -1,0 +1,6 @@
+C:\hema\infinite\B3\csharp\Assignment\Assignment_4\Assignment_4\TicketConcession\bin\Debug\TicketConcession.dll
+C:\hema\infinite\B3\csharp\Assignment\Assignment_4\Assignment_4\TicketConcession\bin\Debug\TicketConcession.pdb
+C:\hema\infinite\B3\csharp\Assignment\Assignment_4\Assignment_4\TicketConcession\obj\Debug\TicketConcession.csproj.AssemblyReference.cache
+C:\hema\infinite\B3\csharp\Assignment\Assignment_4\Assignment_4\TicketConcession\obj\Debug\TicketConcession.csproj.CoreCompileInputs.cache
+C:\hema\infinite\B3\csharp\Assignment\Assignment_4\Assignment_4\TicketConcession\obj\Debug\TicketConcession.dll
+C:\hema\infinite\B3\csharp\Assignment\Assignment_4\Assignment_4\TicketConcession\obj\Debug\TicketConcession.pdb
