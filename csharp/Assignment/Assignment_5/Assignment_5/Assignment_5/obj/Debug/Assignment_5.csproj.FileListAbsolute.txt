@@ -1,0 +1,7 @@
+C:\hema\infinite\B3\csharp\Assignment\Assignment_5\Assignment_5\Assignment_5\bin\Debug\Assignment_5.exe.config
+C:\hema\infinite\B3\csharp\Assignment\Assignment_5\Assignment_5\Assignment_5\bin\Debug\Assignment_5.exe
+C:\hema\infinite\B3\csharp\Assignment\Assignment_5\Assignment_5\Assignment_5\bin\Debug\Assignment_5.pdb
+C:\hema\infinite\B3\csharp\Assignment\Assignment_5\Assignment_5\Assignment_5\obj\Debug\Assignment_5.csproj.AssemblyReference.cache
+C:\hema\infinite\B3\csharp\Assignment\Assignment_5\Assignment_5\Assignment_5\obj\Debug\Assignment_5.csproj.CoreCompileInputs.cache
+C:\hema\infinite\B3\csharp\Assignment\Assignment_5\Assignment_5\Assignment_5\obj\Debug\Assignment_5.exe
+C:\hema\infinite\B3\csharp\Assignment\Assignment_5\Assignment_5\Assignment_5\obj\Debug\Assignment_5.pdb

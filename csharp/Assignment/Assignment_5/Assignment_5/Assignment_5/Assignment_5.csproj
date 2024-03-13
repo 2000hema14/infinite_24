@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E036D92-31DE-48C1-B226-E7C84A5BA8DC}</ProjectGuid>
+    <ProjectGuid>{759A76AD-8B3E-4360-A1A6-F67ADF2D263A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Assignment_4</RootNamespace>
-    <AssemblyName>Assignment_4</AssemblyName>
+    <RootNamespace>Assignment_5</RootNamespace>
+    <AssemblyName>Assignment_5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Letter</StartupObject>
+    <StartupObject>Assignment_5.StudentDetails</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,19 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CallLibrary.cs" />
-    <Compile Include="Letter.cs" />
+    <Compile Include="Books.cs" />
+    <Compile Include="Box.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="IStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Square.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TicketConcession\TicketConcession.csproj">
-      <Project>{5454a9e2-2418-4d35-84b9-61a5981fa1ed}</Project>
-      <Name>TicketConcession</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
