@@ -1,0 +1,133 @@
+Create database AssignmentDB2
+use AssignmentDB2
+
+Create table tblEMP (
+    empno INT PRIMARY KEY,ename VARCHAR(30), job VARCHAR(30),mgr_id INT, hiredate DATE, sal DECIMAL(10, 2),
+     comm DECIMAL(10, 2), deptno INT);
+
+ 
+Insert into tblEMP (empno, ename, job, mgr_id, hiredate, sal, comm, deptno)
+VALUES 
+(7369, 'SMITH', 'CLERK', 7902, '1980-12-17', 800.00, NULL, 20),
+(7499, 'ALLEN', 'SALESMAN', 7698, '1981-02-20', 1600.00, 300.00, 30),
+(7521, 'WARD', 'SALESMAN', 7698, '1981-02-22', 1250.00, 500.00, 30),
+(7566, 'JONES', 'MANAGER', 7839, '1981-04-02', 2975.00, NULL, 20),
+(7654, 'MARTIN', 'SALESMAN', 7698, '1981-09-28', 1250.00, 1400.00, 30),
+(7698, 'BLAKE', 'MANAGER', 7839, '1981-05-01', 2850.00, NULL, 30),
+(7782, 'CLARK', 'MANAGER', 7839, '1981-06-09', 2450.00, NULL, 10),
+(7788, 'SCOTT', 'ANALYST', 7566, '1987-04-19', 3000.00, NULL, 20),
+(7839, 'KING', 'PRESIDENT', NULL, '1981-11-17', 5000.00, NULL, 10),
+(7844, 'TURNER', 'SALESMAN', 7698, '1981-09-08', 1500.00, 0.00, 30),
+(7876, 'ADAMS', 'CLERK', 7788, '1987-05-23', 1100.00, NULL, 20),
+(7900, 'JAMES', 'CLERK', 7698, '1981-12-03', 950.00, NULL, 30),
+(7902, 'FORD', 'ANALYST', 7566, '1981-12-03', 3000.00, NULL, 20),
+(7934, 'MILLER', 'CLERK', 7782, '1982-01-23', 1300.00, NULL, 10)
+
+Select *from tblEMP
+
+Create table tblDEPT (deptno INT PRIMARY KEY,dname VARCHAR(30), loc VARCHAR(30));
+
+Insert into tblDEPT (deptno,dname , loc) values (10, 'ACCOUNTING', 'NEW YORK'),
+(20, 'RESEARCH', 'DALLAS'),(30, 'SALES', 'CHICAGO'),(40, 'OPERATIONS', 'BOSTON')
+
+Select * from tblDEPT
+
+--1.
+Select * from tblEMP where ename like 'A%'
+--2
+Select * from tblEMP where mgr_id Is null
+--3.
+Select ename,empno,sal 
+From tblemp
+where sal >= 1200 AND sal <= 1400;
+--4.
+
+--increment sal by 10%
+UPDATE tblEMP 
+Set Sal = SAL * 1.10
+WHERE deptno = 20;
+
+--after payrise of sal
+SELECT deptno, ename, Sal  AfterIncrement
+FROM tblEMP
+WHERE deptno = 20;
+
+--before payrise of sal
+SELECT deptno, ename, Sal beforeIncrement
+FROM tblEMP
+WHERE deptno = 20;
+
+--5.
+SELECT COUNT(*)"No. of Clerks Employed"
+FROM tblEMP
+WHERE Job = 'CLERK';
+
+--6.
+SELECT job, 
+COUNT(*)"Number of Employees", 
+AVG(Sal) AS "Average Salary"
+FROM tblEMP
+GROUP BY Job;
+
+--7.
+SELECT *
+FROM tblEMP
+WHERE Sal = (SELECT MIN(Sal) FROM tblEMP)
+   OR Sal = (SELECT MAX(Sal) FROM tblEMP);
+
+--8.
+SELECT * FROM tblDEPT WHERE deptno NOT IN (SELECT deptno FROM tblEMP)
+
+--9.
+select ename,sal,job
+from tblEMP
+where job='ANALYST' And sal>1200 AND deptno=20
+Order by ename asc
+
+--10.
+SELECT D.dname, D.deptno, SUM(e.sal) AS "Total Salary"
+FROM tblDEPT D
+LEFT JOIN tblEMP E ON D.DEPTNO = E.DEPTNO
+GROUP BY D.DNAME, D.DEPTNO
+
+--12.
+Select * from tblEMP where ename like '[A,M]%'
+
+--11.
+Select ename,sal from tblEMP
+where ename in ('SMITH','MILLER')
+
+--13.
+select ename,sal*12
+from tblEMP
+where ename in ('SMITH')
+
+--14.
+Select ename,sal
+from tblEMP
+where sal not between 1500 and 2850
+
+--15.
+SELECT E.ename AS "Manager Name", COUNT(*) AS "Number of Employees"
+FROM tblEMP E
+JOIN tblEMP M ON E.empno = M.mgr_id
+GROUP BY E.ENAME
+HAVING COUNT(*) > 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+   
