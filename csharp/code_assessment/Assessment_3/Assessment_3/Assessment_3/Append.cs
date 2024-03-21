@@ -12,7 +12,7 @@ namespace Assessment_3
             static void Main()
             {
                 string filePath = "sample.txt";
-                string textToAppend = "MY ASSESSMENT 3";
+                string textToAppend = "MY ASSESSMENT 3 ";
 
                 try
                 {
