@@ -136,3 +136,7 @@ select gender, COUNT(*) AS Total_N0_OF_M_F
 from tblStudentDetails
 group by gender;
 
+
+
+
+
