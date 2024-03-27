@@ -63,7 +63,7 @@ insert into  tblHoliday (holiday_date, holiday_name) values
 ('2024-01-26','Republic Day'),
 ('2025-01-01', 'New Year')
  
-select * from tblholiday
+select * from tblEMP
 -------------------------------------------------------------------------------------------------------------------------------
 Create table tblEMP (
     empno INT PRIMARY KEY,ename VARCHAR(30), job VARCHAR(30),mgr_id INT, hiredate DATE, sal DECIMAL(10, 2),
