@@ -1,4 +1,4 @@
-create database AssessmentDB2
+﻿create database AssessmentDB2
 
 ----1.Write a query to display your birthday( day of week)
 select datename(dw, '2000-12-14') as BDay_Day_Of_Week
@@ -12,7 +12,7 @@ SELECT DATEDIFF(DD, '2000-12-14', GETDATE()) AS ageindays
           8505
 
 
-----3.?Write a query to display all employees information those who joined before 5 years in the current month
+----3. Write a query to display all employees information those who joined before 5 years in the current month
 Create table tblempjoindate (
     empno INT PRIMARY KEY,ename VARCHAR(30), job VARCHAR(30), hiredate DATE, sal DECIMAL(10, 2))
 
@@ -34,7 +34,7 @@ and month(hiredate) = month(getdate())
   empno   ename   job         hiredate    sal
   7499	  ALLEN	  SALESMAN	  2019-03-28  600.00
 
----4.?Create table Employee with empno, ename, sal, doj columns and perform the following operations in a single transaction
+---4. Create table Employee with empno, ename, sal, doj columns and perform the following operations in a single transaction
 
   Create table tblempdoj (
     empno INT PRIMARY KEY,ename VARCHAR(30), hiredate DATE, sal DECIMAL(10, 2))
@@ -59,6 +59,7 @@ drop table tblempdoj
     hiredate DATE,
     sal DECIMAL(10, 2)
 )
+commit transcation
 INSERT INTO  DeletedEmpDATEOFJOIN
 SELECT *
 FROM tblempjoindate
