@@ -1,0 +1,7 @@
+C:\hema\infinite\B3\Linq\LINQ_Assignment1\LINQ_Assignment1\bin\Debug\LINQ_Assignment1.exe.config
+C:\hema\infinite\B3\Linq\LINQ_Assignment1\LINQ_Assignment1\bin\Debug\LINQ_Assignment1.exe
+C:\hema\infinite\B3\Linq\LINQ_Assignment1\LINQ_Assignment1\bin\Debug\LINQ_Assignment1.pdb
+C:\hema\infinite\B3\Linq\LINQ_Assignment1\LINQ_Assignment1\obj\Debug\LINQ_Assignment1.csproj.AssemblyReference.cache
+C:\hema\infinite\B3\Linq\LINQ_Assignment1\LINQ_Assignment1\obj\Debug\LINQ_Assignment1.csproj.CoreCompileInputs.cache
+C:\hema\infinite\B3\Linq\LINQ_Assignment1\LINQ_Assignment1\obj\Debug\LINQ_Assignment1.exe
+C:\hema\infinite\B3\Linq\LINQ_Assignment1\LINQ_Assignment1\obj\Debug\LINQ_Assignment1.pdb
