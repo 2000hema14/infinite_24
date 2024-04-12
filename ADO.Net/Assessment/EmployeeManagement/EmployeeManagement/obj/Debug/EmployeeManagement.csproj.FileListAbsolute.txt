@@ -1,0 +1,7 @@
+C:\hema\infinite\B3\ADO.Net\Assessment\EmployeeManagement\EmployeeManagement\bin\Debug\EmployeeManagement.exe.config
+C:\hema\infinite\B3\ADO.Net\Assessment\EmployeeManagement\EmployeeManagement\bin\Debug\EmployeeManagement.exe
+C:\hema\infinite\B3\ADO.Net\Assessment\EmployeeManagement\EmployeeManagement\bin\Debug\EmployeeManagement.pdb
+C:\hema\infinite\B3\ADO.Net\Assessment\EmployeeManagement\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.AssemblyReference.cache
+C:\hema\infinite\B3\ADO.Net\Assessment\EmployeeManagement\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CoreCompileInputs.cache
+C:\hema\infinite\B3\ADO.Net\Assessment\EmployeeManagement\EmployeeManagement\obj\Debug\EmployeeManagement.exe
+C:\hema\infinite\B3\ADO.Net\Assessment\EmployeeManagement\EmployeeManagement\obj\Debug\EmployeeManagement.pdb
