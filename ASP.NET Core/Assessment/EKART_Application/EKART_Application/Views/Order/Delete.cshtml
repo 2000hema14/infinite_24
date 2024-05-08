@@ -1,0 +1,23 @@
+﻿@model EKART_Application.Models.Order
+
+<h1>Delete Order</h1>
+<p>Are you sure you want to delete the following order?</p>
+<table class="table">
+    <tr>
+        <th>Order ID</th>
+        <td>@Model.OrderId</td>
+    </tr>
+    <tr>
+        <th>Order Date</th>
+        <td>@Model.OrderDate</td>
+    </tr>
+    <tr>
+        <th>Customer Name</th>
+        <td>@Model.CustomerName</td>
+    </tr>
+   
+</table>
+<form asp-action="DeleteConfirmed" asp-route-id="@Model.OrderId" method="post">
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

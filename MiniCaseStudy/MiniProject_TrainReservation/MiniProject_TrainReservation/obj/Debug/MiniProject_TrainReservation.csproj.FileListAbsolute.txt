@@ -1,0 +1,12 @@
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\bin\Debug\MiniProject_TrainReservation.exe.config
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\bin\Debug\MiniProject_TrainReservation.exe
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\bin\Debug\MiniProject_TrainReservation.pdb
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\bin\Debug\EntityFramework.dll
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\bin\Debug\EntityFramework.SqlServer.dll
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\bin\Debug\EntityFramework.xml
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\bin\Debug\EntityFramework.SqlServer.xml
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\obj\Debug\MiniProject_TrainReservation.csproj.AssemblyReference.cache
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\obj\Debug\MiniProject_TrainReservation.csproj.CoreCompileInputs.cache
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\obj\Debug\MiniProject_TrainReservation.csproj.CopyComplete
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\obj\Debug\MiniProject_TrainReservation.exe
+C:\hema\infinite\B3\MiniCaseStudy\MiniProject_TrainReservation\MiniProject_TrainReservation\obj\Debug\MiniProject_TrainReservation.pdb

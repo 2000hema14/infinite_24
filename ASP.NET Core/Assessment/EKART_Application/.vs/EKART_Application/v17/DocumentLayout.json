@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\views\\order\\bill.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\views\\order\\bill.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\views\\order\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\views\\order\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\views\\order\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\views\\order\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\views\\order\\edit oder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\views\\order\\edit oder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\ekart_application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\ekart_application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\models\\northwinddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\models\\northwinddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|c:\\hemalatha\\project\\p1\\asp.net core mvc\\assessment\\ekart_application\\ekart_application\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{67A0A653-5E84-44E9-98A5-119E04FEFC30}|EKART_Application\\EKART_Application.csproj|solutionrelative:ekart_application\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit Oder.cshtml",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Edit Oder.cshtml",
+              "RelativeDocumentMoniker": "EKART_Application\\Views\\Order\\Edit Oder.cshtml",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Edit Oder.cshtml",
+              "RelativeToolTip": "EKART_Application\\Views\\Order\\Edit Oder.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T06:27:50.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Delete.cshtml",
+              "RelativeDocumentMoniker": "EKART_Application\\Views\\Order\\Delete.cshtml",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Delete.cshtml",
+              "RelativeToolTip": "EKART_Application\\Views\\Order\\Delete.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T06:16:14.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Bill.cshtml",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Bill.cshtml",
+              "RelativeDocumentMoniker": "EKART_Application\\Views\\Order\\Bill.cshtml",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Bill.cshtml",
+              "RelativeToolTip": "EKART_Application\\Views\\Order\\Bill.cshtml",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAAAAAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T05:32:22.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "EKART_Application\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "EKART_Application\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowDwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:30:26.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Create.cshtml",
+              "RelativeDocumentMoniker": "EKART_Application\\Views\\Order\\Create.cshtml",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Views\\Order\\Create.cshtml",
+              "RelativeToolTip": "EKART_Application\\Views\\Order\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAgwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T06:14:56.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EKART_Application.csproj",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\EKART_Application.csproj",
+              "RelativeDocumentMoniker": "EKART_Application\\EKART_Application.csproj",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\EKART_Application.csproj",
+              "RelativeToolTip": "EKART_Application\\EKART_Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAwBMAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-08T04:40:27.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Program.cs",
+              "RelativeDocumentMoniker": "EKART_Application\\Program.cs",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Program.cs",
+              "RelativeToolTip": "EKART_Application\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:37:15.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Repository\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "EKART_Application\\Repository\\OrderRepository.cs",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Repository\\OrderRepository.cs",
+              "RelativeToolTip": "EKART_Application\\Repository\\OrderRepository.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAQwCQAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:39:23.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Repository\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "EKART_Application\\Repository\\IOrderRepository.cs",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Repository\\IOrderRepository.cs",
+              "RelativeToolTip": "EKART_Application\\Repository\\IOrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:39:44.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NorthwinddbContext.cs",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Models\\NorthwinddbContext.cs",
+              "RelativeDocumentMoniker": "EKART_Application\\Models\\NorthwinddbContext.cs",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\Models\\NorthwinddbContext.cs",
+              "RelativeToolTip": "EKART_Application\\Models\\NorthwinddbContext.cs",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAewP4AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:03:46.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\appsettings.json",
+              "RelativeDocumentMoniker": "EKART_Application\\appsettings.json",
+              "ToolTip": "C:\\Hemalatha\\Project\\P1\\ASP.NET CORE MVC\\Assessment\\EKART_Application\\EKART_Application\\appsettings.json",
+              "RelativeToolTip": "EKART_Application\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-08T05:37:48.463Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
