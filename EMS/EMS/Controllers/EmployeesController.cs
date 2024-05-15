@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Linq.Dynamic;
 using System.Web.Helpers;
 using EMS.Models;
+using System.Text.RegularExpressions;
 
 namespace EMS.Controllers
 {
@@ -16,29 +17,25 @@ namespace EMS.Controllers
     [Authorize]
     public class EmployeesController : Controller
     {
-        private EmpDatabaseEntities3 db = new EmpDatabaseEntities3();
+        private EmpDatabaseEntities1 db = new EmpDatabaseEntities1();
+
 
         // GET: Employees
         public ActionResult Index(int page = 1, string sort = "Emp_First_Name", string sortdir = "asc", string search = "")
         {
-            int pageSize = 5;
+            int pageSize = 10;
             int totalRecord = 0;
             if (page < 1) page = 1;
             int skip = (page * pageSize) - pageSize;
             var data = GetEmployees(search, sort, sortdir, skip, pageSize, out totalRecord);
             ViewBag.TotalRows = totalRecord;
             ViewBag.search = search;
-
-            if (TempData["AlertMessage"] != null)
-            {
-                ViewBag.AlertMessage = TempData["AlertMessage"];
-            }
-
             return View(data);
         }
 
         public List<Employee> GetEmployees(string search, string sort, string sortdir, int skip, int pageSize, out int totalRecord)
         {
+
             var v = (from a in db.Employees
                      where
                              a.Emp_First_Name.Contains(search) ||
@@ -47,7 +44,7 @@ namespace EMS.Controllers
                              a.Emp_Grade.Contains(search) ||
                              a.Emp_Designation.Contains(search)
                      select a
-                    );
+                            );
             totalRecord = v.Count();
             v = v.OrderBy(sort + " " + sortdir);
             if (pageSize > 0)
@@ -56,7 +53,6 @@ namespace EMS.Controllers
             }
             return v.ToList();
         }
-
 
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
@@ -88,33 +84,51 @@ namespace EMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Emp_ID,Emp_First_Name,Emp_Last_Name,Emp_Date_of_Birth,Emp_Date_of_Joining,Emp_Dept_ID,Emp_Grade,Emp_Designation,Emp_Salary,Emp_Gender,Emp_Marital_Status,Emp_Home_Address,Emp_Contact_Num")] Employee employee)
         {
-            if (db.Employees.Any(d => d.Emp_ID == employee.Emp_ID))
-            {
-                ModelState.AddModelError("Emp_ID", "Employee ID already exists.");
-            }
-
-            var grade = db.Grade_master.FirstOrDefault(g => g.Grade_Code == employee.Emp_Grade);
-            if (grade != null)
-            {
-                if (employee.Emp_Salary < grade.Min_Salary || employee.Emp_Salary > grade.Max_Salary)
-                {
-                    ModelState.AddModelError("Emp_Salary", $"Salary must be between {grade.Min_Salary} and {grade.Max_Salary} for grade {grade.Grade_Code}");
-                }
-            }
-            else
-            {
-                ModelState.AddModelError("Emp_Grade", "Invalid Grade");
-            }
-
-            if (string.IsNullOrEmpty(employee.Emp_Contact_Num) || employee.Emp_Contact_Num.Length != 10)
-            {
-                ModelState.AddModelError("Emp_Contact_Num", "Contact Number must be 10 digits");
-            }
-
             if (ModelState.IsValid)
             {
-                // Set the status to "Active" by default
-                employee.Status = "Active";
+                if (string.IsNullOrEmpty(employee.Emp_First_Name))
+                {
+                    ModelState.AddModelError("Emp_First_Name", "Please enter the first name");
+                    ViewBag.Emp_Dept_ID = new SelectList(db.Departments, "Dept_ID", "Dept_Name", employee.Emp_Dept_ID);
+                    ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
+                    return View(employee);
+                }
+
+                if (string.IsNullOrEmpty(employee.Emp_Last_Name))
+                {
+                    ModelState.AddModelError("Emp_Last_Name", "Please enter the last name");
+                    ViewBag.Emp_Dept_ID = new SelectList(db.Departments, "Dept_ID", "Dept_Name", employee.Emp_Dept_ID);
+                    ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
+                    return View(employee);
+                }
+
+                if (string.IsNullOrEmpty(employee.Emp_Contact_Num))
+                {
+                    ModelState.AddModelError("Emp_Contact_Num", "Please enter the contact number");
+                    ViewBag.Emp_Dept_ID = new SelectList(db.Departments, "Dept_ID", "Dept_Name", employee.Emp_Dept_ID);
+                    ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
+                    return View(employee);
+                }
+
+                if (!Regex.IsMatch(employee.Emp_Contact_Num, @"^\d{10}$"))
+                {
+                    ModelState.AddModelError("Emp_Contact_Num", "Contact number must be 10 digits");
+                    ViewBag.Emp_Dept_ID = new SelectList(db.Departments, "Dept_ID", "Dept_Name", employee.Emp_Dept_ID);
+                    ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
+                    return View(employee);
+                }
+
+                var grade = db.Grade_master.FirstOrDefault(g => g.Grade_Code == employee.Emp_Grade);
+                if (grade != null)
+                {
+                    if (employee.Emp_Salary < grade.Min_Salary || employee.Emp_Salary > grade.Max_Salary)
+                    {
+                        ModelState.AddModelError("Emp_Salary", $"Salary for grade {grade.Grade_Code} must be between {grade.Min_Salary} and {grade.Max_Salary}");
+                        ViewBag.Emp_Dept_ID = new SelectList(db.Departments, "Dept_ID", "Dept_Name", employee.Emp_Dept_ID);
+                        ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
+                        return View(employee);
+                    }
+                }
 
                 db.Employees.Add(employee);
                 db.SaveChanges();
@@ -126,6 +140,7 @@ namespace EMS.Controllers
             ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
             return View(employee);
         }
+
 
 
         // GET: Employees/Edit/5
@@ -146,18 +161,33 @@ namespace EMS.Controllers
         }
 
         // POST: Employees/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Emp_ID,Emp_First_Name,Emp_Last_Name,Emp_Date_of_Birth,Emp_Date_of_Joining,Emp_Dept_ID,Emp_Grade,Emp_Designation,Emp_Salary,Emp_Gender,Emp_Marital_Status,Emp_Home_Address,Emp_Contact_Num,Status")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Emp_ID,Emp_First_Name,Emp_Last_Name,Emp_Date_of_Birth,Emp_Date_of_Joining,Emp_Dept_ID,Emp_Grade,Emp_Designation,Emp_Salary,Emp_Gender,Emp_Marital_Status,Emp_Home_Address,Emp_Contact_Num")] Employee employee)
         {
             if (ModelState.IsValid)
             {
+                if (string.IsNullOrEmpty(employee.Emp_Last_Name))
+                {
+                    ModelState.AddModelError("Emp_Last_Name", "Last Name is required");
+                }
+                if (string.IsNullOrEmpty(employee.Emp_First_Name))
+                {
+                    ModelState.AddModelError("Emp_First_Name", "First Name is required");
+                }
+                if (string.IsNullOrEmpty(employee.Emp_Contact_Num) || employee.Emp_Contact_Num.Length != 10)
+                {
+                    ModelState.AddModelError("Emp_Contact_Num", "Contact number must be 10 digits");
+                }
+
                 var grade = db.Grade_master.FirstOrDefault(g => g.Grade_Code == employee.Emp_Grade);
                 if (grade != null)
                 {
                     if (employee.Emp_Salary < grade.Min_Salary || employee.Emp_Salary > grade.Max_Salary)
                     {
-                        ModelState.AddModelError("Emp_Salary", $"Salary must be between {grade.Min_Salary} and {grade.Max_Salary} for the selected grade.");
+                        ModelState.AddModelError("Emp_Salary", $"Salary for grade {grade.Grade_Code} must be between {grade.Min_Salary} and {grade.Max_Salary}");
                         ViewBag.Emp_Dept_ID = new SelectList(db.Departments, "Dept_ID", "Dept_Name", employee.Emp_Dept_ID);
                         ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
                         return View(employee);
@@ -169,6 +199,7 @@ namespace EMS.Controllers
                 TempData["AlertMessage"] = "Employee Updated Successfully....!";
                 return RedirectToAction("Index");
             }
+
             ViewBag.Emp_Dept_ID = new SelectList(db.Departments, "Dept_ID", "Dept_Name", employee.Emp_Dept_ID);
             ViewBag.Emp_Grade = new SelectList(db.Grade_master, "Grade_Code", "Description", employee.Emp_Grade);
             return View(employee);
@@ -195,23 +226,9 @@ namespace EMS.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Employee employee = db.Employees.Find(id);
-            if (employee != null)
-            {
-                if (employee.Status == "Active")
-                {
-                    employee.Status = "Inactive";
-                    db.SaveChanges();
-                    TempData["AlertMessage"] = "Employee status has been changed to inactive successfully.";
-                }
-                else if (employee.Status == "Inactive")
-                {
-                    TempData["AlertMessage"] = "Employee is already inactive.";
-                }
-            }
-            else
-            {
-                TempData["AlertMessage"] = "Employee not found.";
-            }
+            db.Employees.Remove(employee);
+            db.SaveChanges();
+            TempData["AlertMessage"] = "Employee Deleted Successfully....!";
             return RedirectToAction("Index");
         }
 

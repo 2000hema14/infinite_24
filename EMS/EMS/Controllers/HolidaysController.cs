@@ -8,12 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using EMS.Models;
 
-
 namespace EMS.Controllers
 {
     public class HolidaysController : Controller
     {
-        private EmpDatabaseEntities3 db = new EmpDatabaseEntities3 ();
+        private EmpDatabaseEntities1 db = new EmpDatabaseEntities1();
 
         // GET: Holidays
         public ActionResult Index()
@@ -49,15 +48,10 @@ namespace EMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "HolidayID,HolidayName,HolidayDate")] Holiday holiday)
         {
-            if (db.Holidays.Any(d => d.HolidayID == holiday.HolidayID))
-            {
-                ModelState.AddModelError("HolidayID", "Holiday ID already exists.");
-            }
             if (ModelState.IsValid)
             {
                 db.Holidays.Add(holiday);
                 db.SaveChanges();
-                TempData["AlertMessage"] = "Holiday Added Successfully....!";
                 return RedirectToAction("Index");
             }
 
@@ -90,7 +84,6 @@ namespace EMS.Controllers
             {
                 db.Entry(holiday).State = EntityState.Modified;
                 db.SaveChanges();
-                TempData["AlertMessage"] = "Holiday Updated Successfully....!";
                 return RedirectToAction("Index");
             }
             return View(holiday);
@@ -119,7 +112,6 @@ namespace EMS.Controllers
             Holiday holiday = db.Holidays.Find(id);
             db.Holidays.Remove(holiday);
             db.SaveChanges();
-            TempData["AlertMessage"] = "Holiday Deleted Successfully....!";
             return RedirectToAction("Index");
         }
 

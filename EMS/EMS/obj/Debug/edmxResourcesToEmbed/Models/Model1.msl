@@ -1,22 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="EmpDatabaseModelStoreContainer" CdmEntityContainer="EmpDatabaseEntities3">
+  <EntityContainerMapping StorageEntityContainer="EmpDatabaseModelStoreContainer" CdmEntityContainer="EmpDatabaseEntities1">
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="EmpDatabaseModel.Department">
         <MappingFragment StoreEntitySet="Department">
           <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
           <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Emp_Timesheet">
-      <EntityTypeMapping TypeName="EmpDatabaseModel.Emp_Timesheet">
-        <MappingFragment StoreEntitySet="Emp_Timesheet">
-          <ScalarProperty Name="Timesheet_ID" ColumnName="Timesheet_ID" />
-          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
-          <ScalarProperty Name="WeekStartingDate" ColumnName="WeekStartingDate" />
-          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -36,7 +25,7 @@
           <ScalarProperty Name="Emp_Marital_Status" ColumnName="Emp_Marital_Status" />
           <ScalarProperty Name="Emp_Home_Address" ColumnName="Emp_Home_Address" />
           <ScalarProperty Name="Emp_Contact_Num" ColumnName="Emp_Contact_Num" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
