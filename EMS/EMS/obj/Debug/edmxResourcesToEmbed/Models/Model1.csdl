@@ -8,6 +8,17 @@
     <Property Name="Dept_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__Emp_De__403A8C7D" FromRole="Department" ToRole="Employee" />
   </EntityType>
+  <EntityType Name="Emp_Timesheet">
+    <Key>
+      <PropertyRef Name="Timesheet_ID" />
+    </Key>
+    <Property Name="Timesheet_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ID" Type="Int32" Nullable="false" />
+    <Property Name="WeekStartingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HoursWorked" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Timesheet_Employee" FromRole="Emp_Timesheet" ToRole="Employee" />
+  </EntityType>
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="Emp_ID" />
@@ -25,8 +36,9 @@
     <Property Name="Emp_Marital_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Emp_Home_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Emp_Contact_Num" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="IsActive" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Department" Relationship="Self.FK__Employee__Emp_De__403A8C7D" FromRole="Employee" ToRole="Department" />
+    <NavigationProperty Name="Emp_Timesheet" Relationship="Self.FK_Timesheet_Employee" FromRole="Employee" ToRole="Emp_Timesheet" />
     <NavigationProperty Name="Grade_master" Relationship="Self.FK__Employee__Emp_Gr__412EB0B6" FromRole="Employee" ToRole="Grade_master" />
   </EntityType>
   <EntityType Name="Grade_master">
@@ -69,6 +81,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Timesheet_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Emp_Timesheet" Type="Self.Emp_Timesheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Emp_ID" />
+      </Principal>
+      <Dependent Role="Emp_Timesheet">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Employee__Emp_Gr__412EB0B6">
     <End Role="Grade_master" Type="Self.Grade_master" Multiplicity="1" />
     <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
@@ -81,8 +105,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="EmpDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="EmpDatabaseEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Emp_Timesheet" EntityType="Self.Emp_Timesheet" />
     <EntitySet Name="Employees" EntityType="Self.Employee" />
     <EntitySet Name="Grade_master" EntityType="Self.Grade_master" />
     <EntitySet Name="Admins" EntityType="Self.Admin" />
@@ -90,6 +115,10 @@
     <AssociationSet Name="FK__Employee__Emp_De__403A8C7D" Association="Self.FK__Employee__Emp_De__403A8C7D">
       <End Role="Department" EntitySet="Departments" />
       <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Timesheet_Employee" Association="Self.FK_Timesheet_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Emp_Timesheet" EntitySet="Emp_Timesheet" />
     </AssociationSet>
     <AssociationSet Name="FK__Employee__Emp_Gr__412EB0B6" Association="Self.FK__Employee__Emp_Gr__412EB0B6">
       <End Role="Grade_master" EntitySet="Grade_master" />

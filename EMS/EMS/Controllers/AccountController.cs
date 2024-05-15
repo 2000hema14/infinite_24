@@ -18,13 +18,13 @@ namespace EMS.Controllers
         [HttpPost]
         public ActionResult login(Admin model)
         {
-            using (var context = new EmpDatabaseEntities1())
+            using (var context = new EmpDatabaseEntities3())
             {
                 bool isValid = context.Admins.Any(x => x.AdminId == model.AdminId && x.AdminPassword == model.AdminPassword);
                 if (isValid)
                 {
                     FormsAuthentication.SetAuthCookie(model.AdminId, false);
-                    return RedirectToAction("Index", "Employees");
+                    return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Invalid AdminId or Password");
                 ViewBag.ErrorMessage = "Invalid AdminId or Password";

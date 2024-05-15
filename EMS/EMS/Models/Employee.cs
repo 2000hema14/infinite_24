@@ -11,18 +11,17 @@ namespace EMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
     
     public partial class Employee
     {
-        [Required(ErrorMessage = "Employee Id is required")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            this.Emp_Timesheet = new HashSet<Emp_Timesheet>();
+        }
+    
         public int Emp_ID { get; set; }
-
-        [Required(ErrorMessage = "Please enter First Name ")]
         public string Emp_First_Name { get; set; }
-
-        [Required(ErrorMessage = "Please enter Last Name")]
         public string Emp_Last_Name { get; set; }
         public Nullable<System.DateTime> Emp_Date_of_Birth { get; set; }
         public Nullable<System.DateTime> Emp_Date_of_Joining { get; set; }
@@ -33,13 +32,12 @@ namespace EMS.Models
         public string Emp_Gender { get; set; }
         public string Emp_Marital_Status { get; set; }
         public string Emp_Home_Address { get; set; }
-
-        [RegularExpression(@"^\d{10}$", ErrorMessage = "Contact number must be 10 digits")]
         public string Emp_Contact_Num { get; set; }
-        public bool IsDeleted { get; set; }
-        public string IsActive { get; set; }
+        public string Status { get; set; }
     
         public virtual Department Department { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Emp_Timesheet> Emp_Timesheet { get; set; }
         public virtual Grade_master Grade_master { get; set; }
     }
 }

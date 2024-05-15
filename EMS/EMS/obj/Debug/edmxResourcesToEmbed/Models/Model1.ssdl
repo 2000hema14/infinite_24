@@ -17,6 +17,16 @@ warning 6002: The table/view 'EmpDatabase.dbo.Admin' does not have a primary key
     <Property Name="Dept_ID" Type="int" Nullable="false" />
     <Property Name="Dept_Name" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Emp_Timesheet">
+    <Key>
+      <PropertyRef Name="Timesheet_ID" />
+    </Key>
+    <Property Name="Timesheet_ID" Type="int" Nullable="false" />
+    <Property Name="Emp_ID" Type="int" Nullable="false" />
+    <Property Name="WeekStartingDate" Type="date" Nullable="false" />
+    <Property Name="HoursWorked" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+  </EntityType>
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="Emp_ID" />
@@ -34,7 +44,7 @@ warning 6002: The table/view 'EmpDatabase.dbo.Admin' does not have a primary key
     <Property Name="Emp_Marital_Status" Type="varchar" MaxLength="20" />
     <Property Name="Emp_Home_Address" Type="varchar" MaxLength="255" />
     <Property Name="Emp_Contact_Num" Type="varchar" MaxLength="15" />
-    <Property Name="IsActive" Type="varchar" MaxLength="20" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="Grade_master">
     <Key>
@@ -81,8 +91,21 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Timesheet_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Emp_Timesheet" Type="Self.Emp_Timesheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Emp_ID" />
+      </Principal>
+      <Dependent Role="Emp_Timesheet">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="EmpDatabaseModelStoreContainer">
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emp_Timesheet" EntityType="Self.Emp_Timesheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Grade_master" EntityType="Self.Grade_master" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Admin" EntityType="Self.Admin" store:Type="Tables" store:Schema="dbo">
@@ -105,6 +128,10 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
     <AssociationSet Name="FK__Employee__Emp_Gr__412EB0B6" Association="Self.FK__Employee__Emp_Gr__412EB0B6">
       <End Role="Grade_master" EntitySet="Grade_master" />
       <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Timesheet_Employee" Association="Self.FK_Timesheet_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Emp_Timesheet" EntitySet="Emp_Timesheet" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

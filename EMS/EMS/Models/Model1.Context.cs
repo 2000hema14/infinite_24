@@ -13,10 +13,10 @@ namespace EMS.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EmpDatabaseEntities1 : DbContext
+    public partial class EmpDatabaseEntities3 : DbContext
     {
-        public EmpDatabaseEntities1()
-            : base("name=EmpDatabaseEntities1")
+        public EmpDatabaseEntities3()
+            : base("name=EmpDatabaseEntities3")
         {
         }
     
@@ -26,6 +26,7 @@ namespace EMS.Models
         }
     
         public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Emp_Timesheet> Emp_Timesheet { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Grade_master> Grade_master { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }

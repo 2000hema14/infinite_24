@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EmpDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EmpDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'EmpDatabase.dbo.Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Admin">
@@ -21,6 +21,16 @@ warning 6002: The table/view 'EmpDatabase.dbo.Admin' does not have a primary key
           </Key>
           <Property Name="Dept_ID" Type="int" Nullable="false" />
           <Property Name="Dept_Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Timesheet">
+          <Key>
+            <PropertyRef Name="Timesheet_ID" />
+          </Key>
+          <Property Name="Timesheet_ID" Type="int" Nullable="false" />
+          <Property Name="Emp_ID" Type="int" Nullable="false" />
+          <Property Name="WeekStartingDate" Type="date" Nullable="false" />
+          <Property Name="HoursWorked" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -39,7 +49,7 @@ warning 6002: The table/view 'EmpDatabase.dbo.Admin' does not have a primary key
           <Property Name="Emp_Marital_Status" Type="varchar" MaxLength="20" />
           <Property Name="Emp_Home_Address" Type="varchar" MaxLength="255" />
           <Property Name="Emp_Contact_Num" Type="varchar" MaxLength="15" />
-          <Property Name="IsActive" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Grade_master">
           <Key>
@@ -86,8 +96,21 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Timesheet_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Emp_Timesheet" Type="Self.Emp_Timesheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Emp_Timesheet">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="EmpDatabaseModelStoreContainer">
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Timesheet" EntityType="Self.Emp_Timesheet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Grade_master" EntityType="Self.Grade_master" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admin" EntityType="Self.Admin" store:Type="Tables" store:Schema="dbo">
@@ -111,9 +134,12 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
             <End Role="Grade_master" EntitySet="Grade_master" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
+          <AssociationSet Name="FK_Timesheet_Employee" Association="Self.FK_Timesheet_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Emp_Timesheet" EntitySet="Emp_Timesheet" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EmpDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -124,6 +150,17 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
           <Property Name="Dept_ID" Type="Int32" Nullable="false" />
           <Property Name="Dept_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__Emp_De__403A8C7D" FromRole="Department" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Emp_Timesheet">
+          <Key>
+            <PropertyRef Name="Timesheet_ID" />
+          </Key>
+          <Property Name="Timesheet_ID" Type="Int32" Nullable="false" />
+          <Property Name="Emp_ID" Type="Int32" Nullable="false" />
+          <Property Name="WeekStartingDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HoursWorked" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Timesheet_Employee" FromRole="Emp_Timesheet" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -142,8 +179,9 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
           <Property Name="Emp_Marital_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Emp_Home_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Emp_Contact_Num" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="IsActive" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Department" Relationship="Self.FK__Employee__Emp_De__403A8C7D" FromRole="Employee" ToRole="Department" />
+          <NavigationProperty Name="Emp_Timesheet" Relationship="Self.FK_Timesheet_Employee" FromRole="Employee" ToRole="Emp_Timesheet" />
           <NavigationProperty Name="Grade_master" Relationship="Self.FK__Employee__Emp_Gr__412EB0B6" FromRole="Employee" ToRole="Grade_master" />
         </EntityType>
         <EntityType Name="Grade_master">
@@ -186,6 +224,18 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Timesheet_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Emp_Timesheet" Type="Self.Emp_Timesheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Emp_Timesheet">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Employee__Emp_Gr__412EB0B6">
           <End Role="Grade_master" Type="Self.Grade_master" Multiplicity="1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
@@ -198,8 +248,9 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EmpDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EmpDatabaseEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Emp_Timesheet" EntityType="Self.Emp_Timesheet" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Grade_master" EntityType="Self.Grade_master" />
           <EntitySet Name="Admins" EntityType="Self.Admin" />
@@ -207,6 +258,10 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
           <AssociationSet Name="FK__Employee__Emp_De__403A8C7D" Association="Self.FK__Employee__Emp_De__403A8C7D">
             <End Role="Department" EntitySet="Departments" />
             <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timesheet_Employee" Association="Self.FK_Timesheet_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Emp_Timesheet" EntitySet="Emp_Timesheet" />
           </AssociationSet>
           <AssociationSet Name="FK__Employee__Emp_Gr__412EB0B6" Association="Self.FK__Employee__Emp_Gr__412EB0B6">
             <End Role="Grade_master" EntitySet="Grade_master" />
@@ -218,12 +273,23 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EmpDatabaseModelStoreContainer" CdmEntityContainer="EmpDatabaseEntities1">
+        <EntityContainerMapping StorageEntityContainer="EmpDatabaseModelStoreContainer" CdmEntityContainer="EmpDatabaseEntities3">
           <EntitySetMapping Name="Departments">
             <EntityTypeMapping TypeName="EmpDatabaseModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
                 <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Timesheet">
+            <EntityTypeMapping TypeName="EmpDatabaseModel.Emp_Timesheet">
+              <MappingFragment StoreEntitySet="Emp_Timesheet">
+                <ScalarProperty Name="Timesheet_ID" ColumnName="Timesheet_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="WeekStartingDate" ColumnName="WeekStartingDate" />
+                <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -243,7 +309,7 @@ warning 6002: The table/view 'EmpDatabase.dbo.Holiday' does not have a primary k
                 <ScalarProperty Name="Emp_Marital_Status" ColumnName="Emp_Marital_Status" />
                 <ScalarProperty Name="Emp_Home_Address" ColumnName="Emp_Home_Address" />
                 <ScalarProperty Name="Emp_Contact_Num" ColumnName="Emp_Contact_Num" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

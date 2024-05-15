@@ -4,6 +4,46 @@
     ViewBag.Title = "Index";
 }
 
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('https://t4.ftcdn.net/jpg/07/01/06/73/360_F_701067394_Vc1qj2OspSSCeJ6yf4NaMhy81gdd267C.jpg'); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    
+    table {
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #ddd;
+        }
+
+    /* Styling for action links */
+    .action-links a {
+        margin-right: 5px;
+    }
+</style>
+
 <h2>Index</h2>
 
 <p>
@@ -26,27 +66,28 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
+    @foreach (var item in Model)
+    {
+        <tr>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Grade_Code)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Min_Salary)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Max_Salary)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Grade_Code }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Grade_Code }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Grade_Code })
-    </td>
-</tr>
-}
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Min_Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Max_Salary)
+            </td>
+            <td class="action-links">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Grade_Code }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Grade_Code }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Grade_Code })
+            </td>
+        </tr>
+    }
 
 </table>
